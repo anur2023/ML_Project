@@ -2,19 +2,19 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from dataclasses import dataclass
-import numpy as np # type: ignore
-import pandas as pd # type: ignore
-from sklearn.compose import ColumnTransformer # type: ignore
-from sklearn.impute import SimpleImputer # type: ignore
-from sklearn.pipeline import Pipeline # type: ignore
-from sklearn.preprocessing import OneHotEncoder, StandardScaler # type: ignore
+import numpy as np
+import pandas as pd
+from sklearn.compose import ColumnTransformer
+from sklearn.impute import SimpleImputer
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from src.exception import CustomException
 from src.logger import logging
 from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_fie_path = os.path.join('artifacts', 'processor.pkl')
+    preprocessor_obj_fie_path: str = os.path.join('artifacts', 'processor.pkl')
 
 class DataTransformation:
     def __init__(self):
